@@ -43,4 +43,8 @@ export class HomePage {
   toastWithOptions() {
     this.restService.presentToastWithOptions();
   }
+
+  openMenu() {
+    this.restService.openMenu();
+  }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { ActionSheetController, AlertController, ModalController, PopoverController, ToastController } from '@ionic/angular';
+import { ActionSheetController, AlertController, ModalController, PopoverController, ToastController, LoadingController, MenuController } from '@ionic/angular';
 import { ModalPage } from './modal/modal.page';
 // import { PopoverPage } from './popover/popover.page'
 
@@ -20,7 +20,9 @@ export class RestService {
     public alertController: AlertController,
     public modalController: ModalController,
     public popoverController: PopoverController,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public loadingController: LoadingController,
+    public menuController: MenuController
   ) { }
 
   getRank() {
@@ -188,5 +190,22 @@ export class RestService {
       ]
     });
     toast.present();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Please wait',
+      duration: 2000,
+      cssClass: 'custom-class custom-loading'
+    });
+    return await loading.present();
+  }
+  loadingDismiss() {
+    this.loadingController.dismiss();
+  }
+
+  openMenu() {
+    this.menuController.enable(true,'first');
+    this.menuController.open('first');
   }
 }

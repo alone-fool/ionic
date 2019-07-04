@@ -22,13 +22,15 @@ export class RankPage {
   
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    //Add 'implements OnInit' to the class.\
+    this.restService.presentLoading();
     this.restService.getRank()
       .subscribe(data => {
         // console.log(data['playlist'].tracks);
         this.rankList = data['playlist'].tracks;
         // console.log(this.rankList);
-      })
+        this.restService.loadingDismiss();
+      });
   }
 
   loadData(event) {
