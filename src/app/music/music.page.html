@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Music
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Default -->
+  <ion-badge>99</ion-badge>
+
+  <!-- Colors -->
+  <ion-badge color="primary">11</ion-badge>
+  <ion-badge color="secondary">22</ion-badge>
+  <ion-badge color="tertiary">33</ion-badge>
+  <ion-badge color="success">44</ion-badge>
+  <ion-badge color="warning">55</ion-badge>
+  <ion-badge color="danger">66</ion-badge>
+  <ion-badge color="light">77</ion-badge>
+  <ion-badge color="medium">88</ion-badge>
+  <ion-badge color="dark">99</ion-badge>
+
+  <!-- Item with badge on left and right -->
+  <ion-item>
+    <ion-badge slot="start">11</ion-badge>
+    <ion-label>My Item</ion-label>
+    <ion-badge slot="end">22</ion-badge>
+  </ion-item>
+  <div>
+      <ion-ripple-effect></ion-ripple-effect>
+      A plain div with a ripple effect
+    </div>
+    
+    <button>
+      <ion-ripple-effect></ion-ripple-effect>
+      Button
+    </button>
+    <ion-item>
+        <ion-label>MMMM</ion-label>
+        <ion-datetime displayFormat="MMMM" value="2012-12-15T13:47:20.789"></ion-datetime>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>MM DD YY</ion-label>
+        <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+</ion-content>

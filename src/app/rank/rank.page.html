@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>
+      Rank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header style="font-size: 20px;font-weight: 700;">
+      <ion-label>新歌排行榜</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of rankList;let i=index">
+      <ion-label>{{ i + 1 }}.{{ item.name }}-{{item.ar[0].name}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)" immediate-check="false">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
